@@ -30,7 +30,7 @@ def test_tutorial_can_be_skipped():
 
 @allure.title('Verify requested article is shown in the list')
 @allure.feature('Article search')
-@allure.severity(Severity.CRITICAL)
+@allure.severity(Severity.BLOCKER)
 def test_search_for_existing_article():
     application = Wikipedia()
     application.skip_tutorial()
@@ -50,7 +50,7 @@ def test_search_for_non_existing_article():
 
 @allure.title('Verify search list result is updated when search query is changed')
 @allure.feature('Article search')
-@allure.severity(Severity.CRITICAL)
+@allure.severity(Severity.BLOCKER)
 def test_change_search_query():
     application = Wikipedia()
     application.skip_tutorial()
@@ -80,7 +80,7 @@ def test_verify_search_history():
 
 @allure.title('Verify text search in the article')
 @allure.feature('Article interaction')
-@allure.severity(Severity.CRITICAL)
+@allure.severity(Severity.BLOCKER)
 def test_find_text_in_article():
     application = Wikipedia()
     application.skip_tutorial()
