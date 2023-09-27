@@ -75,7 +75,7 @@ def test_verify_search_history():
     application.search_for_article('c sharp lang')
     application.open_article_in_search_results_having_order_n(0)
     application.go_to_explore()
-    application.search_history('c sharp', 'Python lang', 'Java lang')
+    application.search_history('c sharp lang', 'Python lang', 'Java lang')
 
 
 @allure.title('Verify text search in the article')
