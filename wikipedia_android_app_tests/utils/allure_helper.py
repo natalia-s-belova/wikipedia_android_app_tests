@@ -1,6 +1,6 @@
 import allure
 from selene import browser
-import project
+import project_config
 import requests
 
 
