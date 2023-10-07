@@ -48,7 +48,7 @@ In Allure Test Ops is also an additional ability to configure test scope by choo
 
 Reporting is implemented using Allure services.
 
-Allure Report can be opened on Jenkins page (see screenshot above) and contains graphics, detalization of test executions, different kinds of attachments (logs, screenshots, videos, etc.).
+[Allure Report](https://jenkins.autotests.cloud/job/C06-natalya_s_belova_wikipedia_android_main/allure/) can be opened on Jenkins page (see screenshot above) and contains graphics, detalization of test executions, different kinds of attachments (logs, screenshots, videos, etc.).
 <img src="readme_images/wiki_allure_1.png"/>&nbsp;
 <img src="readme_images/wiki_allure_2.png"/>&nbsp;
 
@@ -73,22 +73,56 @@ In order for such messages to be sent, [notifications library](https://github.co
 
 ### Configuration information
 
-TBD
-## Android Mobile tests configured to be run on BrowserStack/Local real Device/Local Emulator
+Configuration of this project allows tests to be run on BrowserStack/Local real Device/Local Emulator.
 
-### Common precondition:
-Put the [wikipedia .apk](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk) to the root folder of the project
+Below is the short information related to local runs.
 
-### For run on bstack:
-1. Have an acc on bstack 
-2. Configure .env.credentials file
-3. Configure .env.bstack file according to way you are going to run tests
-4. Run test in terminal using command like 'context=bstack pytest'
+#### Pre-requisites:
+* Install python3, allure report (requires java), git.
+* Close this repository, install and activate virtual environment
+~~~
+git clone https://github.com/natalia-s-belova/wikipedia_android_app_tests
+python -m venv .venv
+source .venv/bin/activate      # for MacOS
+sourse .venv\Scripts\activate          # for Windows
+pip install -r requirements.txt
+~~~
 
-### For local run:
-1. Install and run emulator/connect to PC and configure real device 
-2. Install Java SDK, Appium server
-3. Start appium server using command like 'appium' 
-4. Configure .env.local_<> file according to way you are going to run tests
-5. Run test in terminal using command like 'context=local_real pytest' or 'context=local_emulator pytest'
+#### For run on browserstack:
+1. Have an account on browserstack 
+2. Configure .env.credentials file according to the information provided from browserstack (remove '.example)
+3. Upload [wikipedia.apk](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk) file to browserstack and use the result link in 'app' parameter in the next step
+4. Configure .env.bstack file according to way you are going to run tests ('android_device', 'android_version' and 'app' are mandatory, other fields can be left as is)
+5. Run test in terminal using command 
+~~~
+context=bstack pytest
+~~~
 
+#### For local run:
+1. Put the [wikipedia.apk](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk) to the root folder of the project 
+2. Install and run emulator/connect to PC and configure real device
+3. Install Java SDK, Appium server
+4. Start appium server using command 
+~~~
+appium
+~~~ 
+5. Configure .env.local_<> file according to way you are going to run tests
+6Run test in terminal using command 
+~~~
+context=local_real pytest
+~~~
+or
+~~~
+context=local_emulator pytest
+~~~
+6. After tests are completed, create allure report by command for MacOS:
+~~~
+allure serve
+~~~
+
+for Windows:
+~~~
+allure.bat serve
+~~~
+As a result, you would get Allure report with the same content as demonstrated above.
+You can close it by pressing Ctrl+C.
