@@ -22,7 +22,7 @@
 1. Tutorial at the first launch:
    * is shown and has valid content
    * can be skipped
-2. Article's:
+2. Articles:
    * search
    * opening 
    * search history
@@ -84,21 +84,21 @@ Below is the short information related to local runs.
 git clone https://github.com/natalia-s-belova/wikipedia_android_app_tests
 python -m venv .venv
 source .venv/bin/activate      # for MacOS
-sourse .venv\Scripts\activate          # for Windows
+source .venv\Scripts\activate          # for Windows
 pip install -r requirements.txt
 ~~~
 
-#### For run on browserstack:
-1. Have an account on browserstack 
-2. Configure .env.credentials file according to the information provided from browserstack (remove '.example)
+#### For run on BrowserStack:
+1. Have an account on BrowserStack 
+2. Configure .env.credentials file according to the information provided from BrowserStack (remove '.example)
 3. Upload [wikipedia.apk](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk) file to browserstack and use the result link in 'app' parameter in the next step
-4. Configure .env.bstack file according to way you are going to run tests ('android_device', 'android_version' and 'app' are mandatory, other fields can be left as is)
+4. Configure .env.bstack file according to the way you are going to run tests ('android_device', 'android_version' and 'app' are mandatory, other fields can be left as is)
 5. Run test in terminal using command 
 ~~~
 context=bstack pytest
 ~~~
 
-#### For local run:
+#### For the local run:
 1. Put the [wikipedia.apk](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk) to the root folder of the project 
 2. Install and run emulator/connect to PC and configure real device
 3. Install Java SDK, Appium server
@@ -107,7 +107,7 @@ context=bstack pytest
 appium
 ~~~ 
 5. Configure .env.local_<> file according to way you are going to run tests
-6Run test in terminal using command 
+6. Run test in terminal using command 
 ~~~
 context=local_real pytest
 ~~~
@@ -115,7 +115,7 @@ or
 ~~~
 context=local_emulator pytest
 ~~~
-6. After tests are completed, create allure report by command for MacOS:
+7. After tests are completed, create allure report by command for MacOS:
 ~~~
 allure serve
 ~~~
