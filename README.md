@@ -1,5 +1,7 @@
 ## Training project with autotests for Wikipedia Android [mobile application](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk)
+<p align="center">
 <img src="readme_images/logo.png" height="70"/>&nbsp;
+</p>
 
 ### Tools and technologies used
 <p>
@@ -34,25 +36,25 @@ Example of test's running (tutorial content's verifying):
 <img src="readme_images/wikipedia_test.gif" height="500"/>&nbsp;
 
 ### Test Launch
-Tests are launching using Jenkins service.
+Tests are launching using **Jenkins service**.
 To run tests, open the [configured job](https://jenkins.autotests.cloud/job/C06-natalya_s_belova_wikipedia_android_main/) and click 'Build now'.
 
 <img src="readme_images/wiki_jenkins_job.png"/>&nbsp;
 
-Also, since the integration with Allure Test Ops is implemented, it is possible to run tests with this service. 
-In Allure Test Ops is also an additional ability to configure test scope by choosing specific test cases.
+Also, since the integration with **Allure TestOps** is implemented, it is possible to run tests with this service. 
+In Allure TestOps is also an additional ability to configure test scope by choosing specific test cases.
 
 <img src="readme_images/wiki_testops_jobs.png"/>&nbsp;
 
 ### Test Report and Test Documentation
 
-Reporting is implemented using Allure services.
+Reporting is implemented using **Allure services**.
 
 [Allure Report](https://jenkins.autotests.cloud/job/C06-natalya_s_belova_wikipedia_android_main/allure/) can be opened on Jenkins page (see screenshot above) and contains graphics, detalization of test executions, different kinds of attachments (logs, screenshots, videos, etc.).
 <img src="readme_images/wiki_allure_1.png"/>&nbsp;
 <img src="readme_images/wiki_allure_2.png"/>&nbsp;
 
-Allure Test Ops also contains such information and in addition it has generated Test Documentation that can be imported to Jira.
+**Allure TestOps** also contains such information and in addition it has generated Test Documentation that can be imported to Jira.
 <img src="readme_images/wiki_testops_dashboard.png"/>&nbsp;
 <img src="readme_images/wiki_testops_tc.png"/>&nbsp;
 
@@ -90,9 +92,9 @@ pip install -r requirements.txt
 
 #### For run on BrowserStack:
 1. Have an account on BrowserStack 
-2. Configure .env.credentials file according to the information provided from BrowserStack (remove '.example)
+2. Configure **.env.credentials** file according to the information provided from BrowserStack (remove '.example)
 3. Upload [wikipedia.apk](https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk) file to browserstack and use the result link in 'app' parameter in the next step
-4. Configure .env.bstack file according to the way you are going to run tests ('android_device', 'android_version' and 'app' are mandatory, other fields can be left as is)
+4. Configure **.env.bstack** file according to the way you are going to run tests ('android_device', 'android_version' and 'app' are mandatory, other fields can be left as is)
 5. Run test in terminal using command 
 ~~~
 context=bstack pytest
@@ -106,7 +108,7 @@ context=bstack pytest
 ~~~
 appium
 ~~~ 
-5. Configure .env.local_<> file according to way you are going to run tests
+5. Configure **.env.local_emulator** or **.env.local_real** file according to way you are going to run tests
 6. Run test in terminal using command 
 ~~~
 context=local_real pytest
