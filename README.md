@@ -81,10 +81,10 @@ Below is the short information related to local runs.
 
 #### Pre-requisites:
 * Install python3, allure report (requires java), git.
-* Close this repository, install and activate virtual environment
+* Clone this repository, install and activate virtual environment
 ~~~
 git clone https://github.com/natalia-s-belova/wikipedia_android_app_tests
-python -m venv .venv
+python -m venv .venv      # or python3 -m venv .venv
 source .venv/bin/activate      # for MacOS
 source .venv\Scripts\activate          # for Windows
 pip install -r requirements.txt
@@ -128,3 +128,7 @@ allure.bat serve
 ~~~
 As a result, you would get Allure report with the same content as demonstrated above.
 You can close it by pressing Ctrl+C.
+
+Process of running tests locally in different contexts:
+
+https://github.com/natalia-s-belova/wikipedia_android_app_tests/assets/134312439/b8a89234-b26e-46ea-af09-ae9c26196c3c
